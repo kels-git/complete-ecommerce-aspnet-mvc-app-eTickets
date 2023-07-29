@@ -2,15 +2,16 @@
 
 
 @{
-    ViewData["Title"] = "Add a New Actor";
+    ViewData["Title"] = "Update Actor";
 }
 
 <div class="row text">
     <div class="col-md-8 offset-2">
-        <p><h1>Add a new Actor</h1></p>
+        <p><h1>Update @Model.FullName Profile</h1></p>
         <div class="row">
             <div class="col-md-8 offset-2">
-                <form asp-action="Create">
+
+                <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group text-center">
                         <img id="profilePicturePreview" class="border-info rounded-circle" src="" style="max-width: 150px;" />
@@ -33,8 +34,10 @@
                     </div>
 
                     <div class="">
-                        <input type="submit" value="Create" class="btn btn-outline-success float-end"/>
+                        <input type="submit" value="Update" class="btn btn-outline-success float-end" />
                         <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+
+
                     </div>
                 </form>
             </div>
@@ -45,7 +48,7 @@
 
 @section Scripts{
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             var output = document.getElementById('profilePicturePreview');
             output.src = $("#ProfilePictureURL").val();
         })

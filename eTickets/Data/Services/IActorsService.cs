@@ -7,18 +7,18 @@ namespace eTickets.Data.Services
         //here we define retun type, method, paramters 
 
                 //Task is added cos we are using async to get all actors from the ActorsController.cs
-        Task<IEnumerable<Actor>> GetAll();
+        Task<IEnumerable<Actor>> GetAllAsync();
 
                //method to get a single Actor with parameter int
-        Actor GetById(int id);
+        Task <Actor> GetByIdAsync(int id);
                    
               //adding data to database and return nothing 
-        void Add(Actor actor);
+        Task AddAsync(Actor actor);
 
                //method to update data
-        Actor Update(int id, Actor newActor);
+        Task <Actor> UpdateAsync(int id, Actor newActor);
 
-              //last method delete
-        void Delete(int id);
+        //last method delete
+        Task DeleteAsync(int id);
     }
 }
