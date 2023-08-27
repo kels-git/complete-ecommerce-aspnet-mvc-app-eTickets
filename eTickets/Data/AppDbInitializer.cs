@@ -57,9 +57,9 @@ namespace eTickets.Data
 
                     //Actors
 
-                    if (!context.Actors.Any())
+                    if (!context.Actor.Any())
                     {
-                        context.Actors.AddRange(new List<Actor>()
+                        context.Actor.AddRange(new List<Actor>()
                     {
                         new Actor()
                         {
@@ -154,7 +154,7 @@ namespace eTickets.Data
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(10),
                             CinemaId = 3,
-                            ProducerId = 3,
+                            ProducerId = 4,
                             MovieCategory = Enums.MovieCategory.Documentary
                         },
                          new Movie()
@@ -166,7 +166,7 @@ namespace eTickets.Data
                             StartDate = DateTime.Now,
                             EndDate = DateTime.Now.AddDays(3),
                             CinemaId = 1,
-                            ProducerId = 1,
+                            ProducerId = 6,
                             MovieCategory = Enums.MovieCategory.Horror
                         },
                           new Movie()
@@ -201,8 +201,8 @@ namespace eTickets.Data
                             ImageURL ="https://dotnethow.net/images/movies/movie-7.jpeg",
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(-2),
-                            CinemaId = 1,
-                            ProducerId = 3,
+                            CinemaId = 3,
+                            ProducerId = 2,
                             MovieCategory = Enums.MovieCategory.Cartoon
                         },
 

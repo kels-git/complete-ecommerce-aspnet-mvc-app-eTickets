@@ -1,34 +1,34 @@
-﻿@model Actor
+﻿@model Cinema
 
 
 @{
-    ViewData["Title"] = "Delete Actor";
+    ViewData["Title"] = "Delete Cinema";
 }
 
 <div class="row text">
     <div class="col-md-8 offset-2">
         <div class="text-center">
-        <p class="text-center mb-3"><h1>Delete Confirmation for @Model.FullName</h1></p>
+        <p class="text-center mb-3"><h1>Delete Confirmation for @Model.Name</h1></p>
         </div>
         <div class="row">
             <div class="col-md-8 offset-2">
        
                     <div class="form-group text-center">
-                    <img class="border-info rounded-circle" src="" style="max-width: 150px;" id="profilePicturePreview" />
+                    <img class="border-info rounded-circle" src="" style="max-width: 150px;" id="logoPicturePreview" />
                     </div>
                     <div class="mb-3 form-group">
-                        <label asp-for="ProfilePictureURL" class="form-label"></label>
-                        <input asp-for="ProfilePictureURL" class="form-control" readonly/>
+                        <label asp-for="Logo" class="form-label"></label>
+                        <input asp-for="Logo" class="form-control" readonly/>
                        
                     </div>
                     <div class="form-group">
-                        <label asp-for="FullName" class="form-label"></label>
-                        <input asp-for="FullName" class="form-control" readonly />
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" readonly />
 
                     </div>
                     <div class="form-group">
-                        <label asp-for="Bio" class="form-label"></label>
-                        <input asp-for="Bio" class="form-control" readonly />
+                        <label asp-for="Description" class="form-label"></label>
+                    <input asp-for="Description" class="form-control" readonly />
                     </div>
 
                     <div class="form-group">
@@ -47,10 +47,8 @@
 @section Scripts{
     <script>
         $(document).ready(function () {
-            var output = document.getElementById('profilePicturePreview');
-            output.src = $("#ProfilePictureURL").val();
+            var output = document.getElementById('logoPicturePreview');
+            output.src = $("#Logo").val();
         })
     </script>
 }
-
-@*@<button class="btn btn-primary float-right" type="submit">Submit form</button>*@

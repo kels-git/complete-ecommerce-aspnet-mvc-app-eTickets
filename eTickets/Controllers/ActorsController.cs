@@ -69,7 +69,7 @@ namespace eTickets.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio")] Actor actor)
         {
-            actor.ActorId = id;
+            actor.Id = id;
 
             try
             {
