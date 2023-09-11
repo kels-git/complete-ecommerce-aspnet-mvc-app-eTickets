@@ -51,7 +51,7 @@ namespace eTickets.Controllers
             }
         }
 
-        //Get: Actors/Details/1
+        //Get: Actors/Details/id
         public async Task<IActionResult> Details(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -94,7 +94,7 @@ namespace eTickets.Controllers
         }
 
 
-        //Get: Actors/Delete
+        //Get: Actors/Delete/id
         public async Task<IActionResult> Delete(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);

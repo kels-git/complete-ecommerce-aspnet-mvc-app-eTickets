@@ -8,16 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
-
 //services configuration
 builder.Services.AddScoped<IActorsService, ActorsService>();
 builder.Services.AddScoped<IProducerService, ProducerService>();
 builder.Services.AddScoped<ICinemaService, CinemaService>();
+builder.Services.AddScoped<IMoviesService, MoviesService>();
+
 
 //builder.Services.AddScoped<>
 builder.Services.AddControllersWithViews();
-
-
 
 
 var app = builder.Build();
@@ -36,8 +35,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
-
 
 
 app.MapControllerRoute(

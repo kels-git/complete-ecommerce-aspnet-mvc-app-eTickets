@@ -6,7 +6,7 @@
 }
 
 <div class="row">
-   @foreach (var item in Model)
+    @foreach (var item in Model)
     {
         <div class="col-md-4 col-xs-6 border-primary mb-3">
             <div class="card mb-3" style="max-width: 540px">
@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <img src="@item.ImageURL" width="100%" alt=""/>
+                        <img src="@item.ImageURL" width="100%" alt="" />
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
@@ -32,27 +32,28 @@
                             <p class="card-text"><b>Category: </b>@item.MovieCategory </p>
                             <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy") </p>
                             <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy") </p>
-                            <p class="card-text"><b>Status: </b>
-                                @if(DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
+                            <p class="card-text">
+                                <b>Status: </b>
+                                @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                                 {
                                     <span class="badge bg-success text-white">AVAILABLE</span>
                                 }
-                                else if ( DateTime.Now > item.EndDate)
+                                else if (DateTime.Now > item.EndDate)
                                 {
                                     <span class="badge bg-danger text-white">EXPIRED</span>
                                 }
                                 else
                                 {
                                     <span class="badge bg-primary text-white">UPCOMING</span>
-                                }  
+                                }
                             </p>
 
                         </div>
                     </div>
-                    <div class="col-md-12">  
+                    <div class="col-md-12">
                         <div class="card-footer">
                             <p class="card-text">
-                                <a class="btn btn-outline-primary float-end"><i class="bi bi-eye-fill">Show Details</i></a>
+                                <a class="btn btn-outline-primary float-end" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye-fill">Show Details</i></a>
                                 <a class="btn btn-success text-white"><i class="bi bi-cart-plus">Add to Cart (Price @item.Price.ToString("c"))</i></a>
                             </p>
                         </div>
@@ -62,3 +63,5 @@
         </div>
     }
 </div>
+
+@await Html.PartialAsync("_CreateItem", "Movies");
